@@ -1,2 +1,2 @@
-holberton 
+Holberton 
 chat-gpt
