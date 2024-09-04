@@ -1,9 +1,12 @@
 #!/usr/bin/python3
+
 import random
 import os
 
+
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
+
 
 class Minesweeper:
     def __init__(self, width=10, height=10, mines=10):
@@ -12,7 +15,7 @@ class Minesweeper:
         self.mines = set(random.sample(range(width * height), mines))
         self.field = [[' ' for _ in range(width)] for _ in range(height)]
         self.revealed = [[False for _ in range(width)] for _ in range(height)]
-        self.non_mine_cells = width * height - mines  # Calculate the number of non-mine cells
+        self.non_mine_cells = width * height - mines  # Number of non-mine cells
         self.revealed_count = 0  # Track how many cells have been revealed
 
     def print_board(self, reveal=False):
@@ -73,7 +76,7 @@ class Minesweeper:
                 x = int(input("Enter x coordinate: "))
                 y = int(input("Enter y coordinate: "))
                 result = self.reveal(x, y)
-                if result == False:
+                if result is False:
                     self.print_board(reveal=True)
                     print("Game Over! You hit a mine.")
                     break
@@ -85,6 +88,7 @@ class Minesweeper:
                 print("Invalid input. Please enter numbers only.")
             except IndexError:
                 print("Invalid input. Coordinates are out of bounds.")
+
 
 if __name__ == "__main__":
     game = Minesweeper()
