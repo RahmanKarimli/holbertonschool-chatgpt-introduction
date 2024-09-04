@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def print_board(board):
     """
     Prints the current state of the board.
@@ -7,6 +8,7 @@ def print_board(board):
     for row in board:
         print(" | ".join(row))
         print("-" * 5)
+
 
 def check_winner(board):
     """
@@ -34,6 +36,7 @@ def check_winner(board):
 
     return False
 
+
 def is_full(board):
     """
     Checks if the board is full (i.e., no empty spaces).
@@ -42,6 +45,7 @@ def is_full(board):
     bool: True if the board is full, False otherwise.
     """
     return all(cell != " " for row in board for cell in row)
+
 
 def tic_tac_toe():
     """
@@ -73,6 +77,6 @@ def tic_tac_toe():
     else:
         print("It's a draw!")
 
+
 if __name__ == "__main__":
     tic_tac_toe()
-
