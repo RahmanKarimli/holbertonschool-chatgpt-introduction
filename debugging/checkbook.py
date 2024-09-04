@@ -1,22 +1,24 @@
+#!/usr/bin/python3
 class Checkbook:
     def __init__(self):
         self.balance = 0.0
 
     def deposit(self, amount):
         self.balance += amount
-        print("Deposited ${:.2f}".format(amount))
-        print("Current Balance: ${:.2f}".format(self.balance))
+        print(f"Deposited ${amount:.2f}")
+        print(f"Current Balance: ${self.balance:.2f}")
 
     def withdraw(self, amount):
         if amount > self.balance:
             print("Insufficient funds to complete the withdrawal.")
         else:
             self.balance -= amount
-            print("Withdrew ${:.2f}".format(amount))
-            print("Current Balance: ${:.2f}".format(self.balance))
+            print(f"Withdrew ${amount:.2f}")
+            print(f"Current Balance: ${self.balance:.2f}")
 
     def get_balance(self):
-        print("Current Balance: ${:.2f}".format(self.balance))
+        print(f"Current Balance: ${self.balance:.2f}")
+
 
 def main():
     cb = Checkbook()
@@ -47,6 +49,6 @@ def main():
         else:
             print("Invalid command. Please try again.")
 
+
 if __name__ == "__main__":
     main()
-
