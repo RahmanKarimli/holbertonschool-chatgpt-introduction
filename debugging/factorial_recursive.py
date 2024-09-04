@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+
 import sys
+
 
 def factorial(n):
     """
@@ -14,7 +16,8 @@ def factorial(n):
     if n == 0:
         return 1
     else:
-        return n * factorial(n-1)
+        return n * factorial(n - 1)
+
 
 # Get the integer from the command-line argument, calculate its factorial, and print the result.
 f = factorial(int(sys.argv[1]))
